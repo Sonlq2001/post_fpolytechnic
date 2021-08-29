@@ -1,12 +1,14 @@
 import React from "react";
-// import { Container } from "rsuite";
+import { Grid, Row, Col } from "rsuite";
 
 const Layout = ({ children }) => {
 	return (
-		<div>
-			<div>sidebar</div>
-			<div>{children}</div>
-		</div>
+		<Grid fluid={true}>
+			<Row>
+				<Col lg={6}>sidebar</Col>
+				<Col lg={18}>{children}</Col>
+			</Row>
+		</Grid>
 	);
 };
 
