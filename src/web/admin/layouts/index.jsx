@@ -1,12 +1,13 @@
 import React from "react";
+// import { Container } from "rsuite";
 
-const index = ({ children }) => {
+const Layout = ({ children }) => {
 	return (
 		<div>
-			sidebar
-			<p>{children}</p>
+			<div>sidebar</div>
+			<div>{children}</div>
 		</div>
 	);
 };
 
-export default index;
+export default Layout;
