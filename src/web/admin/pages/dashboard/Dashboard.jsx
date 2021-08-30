@@ -1,9 +1,7 @@
-import React from "react";
-
-const Dashboard = () => {
-	return <div>dashboard 
-		ở đay các bạn ạ 
-	</div>;
-};
-
-export default Dashboard;
+import React  from "react"
+const Dashboard =()=>{
+		return (
+		<h3>đây là Dashboard</h3>
+	)
+}
+export  default Dashboard

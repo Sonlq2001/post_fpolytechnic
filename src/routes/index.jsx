@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LayoutClient from "../web/client";
 
 import RouterAdmin from "./../web/admin/index";
 const index = () => {
@@ -7,6 +8,7 @@ const index = () => {
 		<Router>
 			<Switch>
 				<Route path="/admin" component={RouterAdmin} />
+				<Route path="/" component={LayoutClient} />
 			</Switch>
 		</Router>
 	);
