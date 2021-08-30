@@ -11,10 +11,18 @@ const GlobalStyle = createGlobalStyle`
     --second-color: #4FA9A1;
     --black-color: #000000;
     --white-color: #fff;
-    --bg-color: #F6F6F6;
+    /* --bg-color: #F6F6F6; */
     --txt-color: #8d8c8c;
     --title-color: #8c8c8c;
     --border-color: #E8E8E8;
+
+    /* new color */
+    --bg-color: #EDF0F2;
+    --bg2-color: #F7F9FA;
+    --bg3-color: #E8EBEE;
+    --txt-color: #495057;
+    --blue-1: #E0F3FF;
+    --gray-table: #00000008;
   }
 
   *{

@@ -7,10 +7,10 @@ const Layout = ({ children }) => {
 	return (
 		<Grid fluid={true}>
 			<Row>
-				<Col lg={6}>
+				<Col lg={4}>
 					<WrapSidebar>huu son moi code o day</WrapSidebar>
 				</Col>
-				<Col lg={18}>{children}</Col>
+				<Col lg={20}>{children}</Col>
 			</Row>
 		</Grid>
 	);
