@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
 		<Grid fluid={true}>
 			<Row>
 				<Col lg={6}>
-					<WrapSidebar>sidebar</WrapSidebar>
+					<WrapSidebar>huu son moi code o day</WrapSidebar>
 				</Col>
 				<Col lg={18}>{children}</Col>
 			</Row>
