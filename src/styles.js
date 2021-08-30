@@ -23,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
     --txt-color: #495057;
     --blue-1: #E0F3FF;
     --gray-table: #00000008;
+    --bg-active-link: #E5E5EA;
+    --txt-active-link: #575757;
   }
 
   *{
