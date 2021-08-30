@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
 	return <div>dashboard 
-		ở đay các bạn ạ 
+		ở đay các bạn ạ le quang son
 	</div>;
 };
 
