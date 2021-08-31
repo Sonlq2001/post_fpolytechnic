@@ -46,7 +46,7 @@ const Login = () => {
 						</FormGroup>
 					</Form>
 
-					<a href="" className="form-ques">
+					<a href="!#" className="form-ques">
 						Bạn chưa có tài khoản? Đăng kí ?
 					</a>
 				</WrapForm>

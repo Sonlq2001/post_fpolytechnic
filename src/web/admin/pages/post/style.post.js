@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-	padding: 5rem 3rem;
 	min-height: 100vh;
 	background-color: var(--bg-color);
 `;
