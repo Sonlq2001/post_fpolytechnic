@@ -6,8 +6,8 @@ import NavLink from "./../custom/customLink/NavLink";
 
 const Layout = ({ children }) => {
 	return (
-		<Grid fluid={true}>
-			<Row>
+		<Grid fluid={true} style={{ padding: 0 }}>
+			<Row gutter={0}>
 				<Col lg={4}>
 					<WrapSidebar>
 						<Sidenav defaultOpenKeys={["3", "4"]} activeKey="1">
