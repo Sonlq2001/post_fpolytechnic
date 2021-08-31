@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     --gray-table: #00000008;
     --bg-active-link: #E5E5EA;
     --txt-active-link: #575757;
+    --bg4-color: #F7F9FA;
+    --txt-nav: #8e8e93;
   }
 
   *{
