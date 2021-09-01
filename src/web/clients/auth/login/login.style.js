@@ -55,6 +55,7 @@ export const WrapInput = styled.div`
 		color: red;
 		font-size: 1.3rem;
 		margin-top: 3px;
+		text-align: left;
 	}
 
 	label.error-msg {
