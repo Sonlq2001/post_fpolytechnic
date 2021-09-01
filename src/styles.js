@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     --txt-active-link: #575757;
     --bg4-color: #F7F9FA;
     --txt-nav: #8e8e93;
+    --blue-color: #3498db;
   }
 
   *{
