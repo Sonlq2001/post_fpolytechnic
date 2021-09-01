@@ -1,5 +1,16 @@
-import React from "react";
-import { Container, Button, Whisper, Input, Tooltip, Pagination } from "rsuite";
+import React, { useEffect } from "react";
+import {
+	Container,
+	Button,
+	Whisper,
+	Input,
+	Tooltip,
+	Pagination,
+	Loader,
+	Icon,
+	Checkbox,
+} from "rsuite";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
 	Wrap,
@@ -8,7 +19,20 @@ import {
 	Table,
 	WrapPagination,
 } from "./../post/style.post";
+import { fetchCategory } from "./redux/actions/categoryAction";
+
 const Category = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(fetchCategory());
+	}, [dispatch]);
+
+	const { loading, data } = useSelector((state) => state.category);
+
+	if (loading) {
+		return <Loader content="Loading..." center size="sm" />;
+	}
+
 	return (
 		<Container>
 			<Wrap>
@@ -29,17 +53,35 @@ const Category = () => {
 					<Table>
 						<thead>
 							<tr>
+								<th style={{ width: "50px" }}>
+									<Checkbox />
+								</th>
 								<th>#</th>
 								<th>Title</th>
 								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Autd</td>
-								<td>Action</td>
-							</tr>
+							{data.map((cate, index) => {
+								return (
+									<tr>
+										<td>
+											<Checkbox />
+										</td>
+										<td>{index + 1}</td>
+										<td>{cate.name}</td>
+										<td style={{ textAlign: "center" }}>
+											<Button color="orange" style={{ marginRight: "20px" }}>
+												<Icon icon="edit2" />
+											</Button>
+
+											<Button color="red">
+												<Icon icon="trash2" />
+											</Button>
+										</td>
+									</tr>
+								);
+							})}
 						</tbody>
 					</Table>
 
