@@ -10,6 +10,7 @@ export const WrapContent = styled.div`
 	padding: 2rem;
 	border-radius: 5px;
 	box-shadow: 0 2px 5px #eee;
+	min-height: 80vh;
 `;
 
 export const WrapHeader = styled.div`

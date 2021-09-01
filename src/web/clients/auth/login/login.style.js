@@ -58,14 +58,6 @@ export const WrapInput = styled.div`
 		text-align: left;
 	}
 
-	label.error-msg {
-		color: red;
-	}
-
-	input.error-msg {
-		border: 1px solid red;
-	}
-
 	& + & {
 		margin-top: 2.5rem;
 	}
@@ -74,6 +66,7 @@ export const WrapInput = styled.div`
 export const FormGroup = styled.div`
 	position: relative;
 	width: 30rem;
+	text-align: left;
 `;
 
 export const FormLabel = styled.label`
@@ -86,6 +79,12 @@ export const FormLabel = styled.label`
 	font-size: 1.5rem;
 	background-color: var(--white-color);
 	z-index: -1;
+`;
+
+export const FormLabelBlock = styled.label`
+	display: inline-block;
+	font-size: 1.5rem;
+	margin-bottom: 3px;
 `;
 
 export const FormInput = styled.input`
