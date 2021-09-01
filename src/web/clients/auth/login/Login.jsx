@@ -30,7 +30,7 @@ const Login = () => {
 						onSubmit={(values) => {
 							console.log(values);
 						}}
-						validationSchema={Yup.object().shape({
+						validationSchema={Yup.object({
 							email: Yup.string()
 								.required("Vui lòng nhập email !")
 								.email("Email không phù hợp !"),
@@ -41,7 +41,7 @@ const Login = () => {
 						{() => {
 							return (
 								<Form>
-									<InputForm type="text" name="email" />
+									<InputForm type="text" name="email" label="Email" />
 									<InputPasswordForm name="password" />
 
 									<FormGroup>

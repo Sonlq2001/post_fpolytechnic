@@ -4,32 +4,26 @@ import {
 	FormGroup,
 	FormInput,
 	FormLabel,
+	FormLabelBlock,
 	WrapInput,
 } from "../../../clients/auth/login/login.style";
 
 const InputForm = (props) => {
-	const [field, meta] = useField(props);
-	const { error } = meta;
-	const activeError = error === undefined ? "" : "error-msg";
+	const { label, labelBlock } = props;
+	const [field] = useField(props);
 	return (
 		<>
 			<WrapInput>
 				<FormGroup>
+					{labelBlock && <FormLabelBlock htmlFor="">{label}</FormLabelBlock>}
 					<FormInput
 						type="text"
-						placeholder=" "
+						placeholder={labelBlock ? label : " "}
 						{...field}
-						className={activeError}
 					/>
-					<FormLabel htmlFor="" className={activeError}>
-						Email
-					</FormLabel>
+					{!labelBlock && <FormLabel htmlFor="">{label}</FormLabel>}
 				</FormGroup>
-				<ErrorMessage
-					name={field.name}
-					component="div"
-					className={activeError}
-				/>
+				<ErrorMessage name={field.name} component="div" className="error-msg" />
 			</WrapInput>
 		</>
 	);

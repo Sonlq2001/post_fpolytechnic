@@ -7,29 +7,28 @@ import {
 	FormLabel,
 	ShowPassword,
 	WrapInput,
+	FormLabelBlock,
 } from "../../../clients/auth/login/login.style";
 const InputPasswordForm = (props) => {
+	const { labelBlock } = props;
 	const [isPassword, setShowPassword] = useState(false);
-	const [field, meta] = useField(props);
-	const { error } = meta;
-	const activeError = error === undefined ? "" : "error-msg";
+	const [field] = useField(props);
+
 	return (
 		<WrapInput>
 			<FormGroup>
+				{labelBlock && <FormLabelBlock htmlFor="">Password</FormLabelBlock>}
 				<FormInput
 					type={isPassword ? "text" : "password"}
 					{...field}
 					placeholder=" "
-					className={activeError}
 				/>
 				<ShowPassword onClick={() => setShowPassword(!isPassword)}>
 					<Icon icon={isPassword ? "eye-slash" : "eye"} />
 				</ShowPassword>
-				<FormLabel htmlFor="" className={activeError}>
-					Password
-				</FormLabel>
+				{!labelBlock && <FormLabel htmlFor="">Password</FormLabel>}
 			</FormGroup>
-			<ErrorMessage component="div" name={field.name} className={activeError} />
+			<ErrorMessage component="div" name={field.name} className="error-msg" />
 		</WrapInput>
 	);
 };
