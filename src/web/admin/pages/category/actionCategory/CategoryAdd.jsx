@@ -2,12 +2,18 @@ import React from "react";
 import { Button } from "rsuite";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { Title } from "./../../post/actionsPost/styled.postAdd";
 import { WrapContent } from "./../../post/style.post";
 import InputForm from "./../../../../components/formCustom/inputForm/InputForm";
+import { addCategory } from "./../redux/actions/categoryAction";
 
 const CategoryAdd = () => {
+	const dispatch = useDispatch();
+	const history = useHistory();
+
 	return (
 		<WrapContent>
 			<Title>Thêm danh mục</Title>
@@ -19,7 +25,8 @@ const CategoryAdd = () => {
 						name: Yup.string().required("Vui lòng nhập tiêu đề !"),
 					})}
 					onSubmit={(values) => {
-						console.log(values);
+						dispatch(addCategory(values));
+						history.push("/admin/categories");
 					}}
 				>
 					{() => {

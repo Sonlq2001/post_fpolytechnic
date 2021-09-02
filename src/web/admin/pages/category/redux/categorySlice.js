@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCategory } from "./actions/categoryAction";
+import { fetchCategory, addCategory } from "./actions/categoryAction";
 
 const initialState = {
 	data: [],
@@ -16,11 +16,16 @@ const categorySlice = createSlice({
 
 		[fetchCategory.fulfilled]: (state, action) => {
 			state.data = action.payload;
+			console.log(action);
 			state.loading = false;
 		},
 
 		[fetchCategory.rejected]: (state) => {
 			state.loading = true;
+		},
+
+		[addCategory.fulfilled]: (state, action) => {
+			state.data.push(action.payload);
 		},
 	},
 });
