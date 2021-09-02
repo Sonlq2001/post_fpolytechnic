@@ -5,6 +5,11 @@ const categoryApi = {
 		const url = "/categories";
 		return api.get(url);
 	},
+
+	add(cate) {
+		const url = "/categories";
+		return api.post(url, cate);
+	},
 };
 
 export default categoryApi;

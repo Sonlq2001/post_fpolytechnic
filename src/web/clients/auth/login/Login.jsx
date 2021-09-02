@@ -2,6 +2,9 @@ import React from "react";
 import { Button } from "rsuite";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { unwrapResult } from "@reduxjs/toolkit";
 import {
 	WrapLogin,
 	LoginLeft,
@@ -13,7 +16,11 @@ import {
 import LogoFpt from "./../../images/logo-fpt.png";
 import InputForm from "../../../components/formCustom/inputForm/InputForm";
 import InputPasswordForm from "../../../components/formCustom/inputPassword/InputPasswordForm";
+import { login } from "./../redux/authSlice";
+
 const Login = () => {
+	const dispatch = useDispatch();
+	const history = useHistory();
 	return (
 		<WrapLogin>
 			<LoginLeft></LoginLeft>
@@ -27,8 +34,12 @@ const Login = () => {
 					<h3>Login</h3>
 					<Formik
 						initialValues={{ email: "", password: "" }}
-						onSubmit={(values) => {
-							console.log(values);
+						onSubmit={async (values) => {
+							try {
+								const resultResponse = await dispatch(login(values));
+								unwrapResult(resultResponse);
+								history.push("/admin");
+							} catch (error) {}
 						}}
 						validationSchema={Yup.object({
 							email: Yup.string()

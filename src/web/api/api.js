@@ -2,6 +2,11 @@ import axios from "axios";
 // import store from "./../redux/store";
 
 const request = (req) => {
+	const { token } = JSON.parse(localStorage.getItem("user"));
+
+	if (token) {
+		req.headers.Authorization = `Bearer ${token}`;
+	}
 	return req;
 };
 

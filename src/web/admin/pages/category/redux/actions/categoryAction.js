@@ -6,3 +6,10 @@ export const fetchCategory = createAsyncThunk("fetch/category", async () => {
 		return response.data.data;
 	} catch (error) {}
 });
+
+export const addCategory = createAsyncThunk("add/category", async (cate) => {
+	try {
+		const response = await categoryApi.add(cate);
+		return response.data;
+	} catch (error) {}
+});
